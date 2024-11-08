@@ -1,0 +1,469 @@
+@font-face {
+    font-family: 'CustomFont';
+    src: url('/path/to/your/font-file.woff') format('woff'); /* Ajusta el path y el formato según tu archivo de fuente */
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Apply the custom font and styles to all heading elements */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'CustomFont', sans-serif; /* Utiliza la fuente definida anteriormente */
+    font-weight: bold; /* Hacer el texto negrita */
+    text-transform: uppercase; /* Transformar el texto a mayúsculas */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Añadir sombra al texto */
+}
+/* Estilos generales */
+body, h1, h2, h3, p, ul, ol, li, input, button, a {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Estilos para la barra de navegación */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #000;
+    color: #fff;
+}
+
+.navbar-left, .navbar-right {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-left .logo {
+    margin-right: 20px;
+}
+
+.navbar-left .logo img {
+    width: 80px;
+    height: auto;
+    display: block;
+    transition: filter 0.3s ease;
+}
+
+.navbar-left .logo img:hover {
+    filter: brightness(1.2);
+}
+
+.navbar-center {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-center a {
+    margin-right: 15px;
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+    position: relative;
+    transition: color 0.3s, background-color 0.3s;
+    font-family: 'Arial Black', Arial, sans-serif;
+    font-size: 14px;
+    letter-spacing: 0.1em;
+}
+
+.navbar-center a:hover {
+    color: rgb(255, 255, 255);
+    background: linear-gradient(to right, #eeff54, #e9e9e9, #eeff54, #e9e9e9, #eeff54, #e9e9e9, #eeff54);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Estilos para el menú de usuario y carrito en la barra de navegación */
+.user-icon, .cart-icon, .fa-heart, .search-icon {
+    font-size: 1.2rem;
+    color: #fff;
+    margin-right: 15px;
+    cursor: pointer;
+}
+
+.user-icon:hover, .cart-icon:hover, .fa-heart:hover, .search-icon:hover {
+    color: rgb(247, 36, 36);
+}
+
+/* Estilos para el menú de usuario desplegable */
+.user-menu {
+    position: relative;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #fff;
+    color: #000;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: 150px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: left;
+    z-index: 1000;
+    opacity: 0;
+    transform: translateY(-20px) translateX(-100%);
+    transition: all 0.3s ease;
+}
+
+.dropdown-menu.show {
+    display: block;
+    opacity: 1;
+    transform: translateY(0) translateX(-100%);
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: #000;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown-menu a:hover {
+    background-color: #c4c4c4;
+}
+
+/* Estilos para el cuadro de búsqueda */
+.search-bar {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 50px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1100; /* Asegúrate de que esté encima de otros elementos */
+}
+
+.search-bar input {
+    border: none;
+    outline: none;
+    padding: 5px;
+    border-radius: 4px;
+}
+
+.search-bar button {
+    border: none;
+    background-color: #333;
+    color: #fff;
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-left: 5px;
+}
+
+.search-bar.show {
+    display: flex;
+    align-items: center;
+}
+
+/* Estilos para el pie de página */
+.footer {
+    background-color: #000;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+.footer-logo img {
+    width: 50px;
+    height: auto;
+}
+
+/* Estilos para las tarjetas de productos */
+.product-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #f5f5dc; /* Beige */
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
+    color: #000; /* Letras negras */
+}
+
+.product-card img {
+    width: 100%;
+    height: 320px; /* Ajusta la altura según tus necesidades */
+    object-fit: cover;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+.card-body {
+    padding: 15px;
+}
+
+.card-title {
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+    font-family: 'Arial Black', Arial, sans-serif; /* Fuente similar a la imagen */
+    letter-spacing: 0.1em; /* Espaciado de letras */
+}
+
+.card-text {
+    font-size: 0.9rem;
+    color: #000; /* Letras negras */
+}
+
+.card-text strong {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Estilos para el carrusel */
+.carousel-inner img {
+    height: auto;
+    max-height: 500px;
+    object-fit: cover;
+    width: 100%;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    display: none;
+}
+
+/* Ajustes para indicadores */
+.carousel-indicators [data-bs-target] {
+    background-color: #000;
+}
+
+/* Footer Styles */
+.footer {
+    background-color: #f8f9fa;
+    padding: 40px 0;
+    color: #343a40;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.footer .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-sections {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px;
+    margin-bottom: 40px;
+}
+
+.footer-section {
+    flex: 1;
+    margin: 0 20px;
+}
+
+.footer-section h5 {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: #000;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+    color: #343a40;
+    text-decoration: none;
+    transition: color 0.3s, background-color 0.3s;
+    position: relative;
+    background: linear-gradient(90deg, rgba(255,0,0,1) 0%, rgba(255,154,0,1) 20%, rgba(208,222,33,1) 40%, rgba(79,220,74,1) 60%, rgba(63,218,216,1) 80%, rgba(47,128,237,1) 100%);
+    background-size: 200% auto;
+    color: #000;
+    background-clip: text;
+    text-fill-color: transparent;
+    transition: all 0.4s ease;
+}
+
+.footer-section ul li a:hover {
+    background-position: 100% 0;
+    color: #000;
+    text-decoration: none;
+}
+
+/* Redes Sociales */
+.footer-social ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-social ul li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.footer-social ul li i {
+    margin-right: 10px;
+}
+
+.footer-social ul li a {
+    color: #343a40;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-social ul li a:hover {
+    color: #007bff;
+}
+
+.footer-bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-top: 1px solid #ced4da;
+    padding-top: 20px;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.footer-bottom div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.footer-bottom div a {
+    color: #343a40;
+    text-decoration: none;
+    margin: 5px 10px;
+    transition: color 0.3s;
+}
+
+.footer-bottom div a:hover {
+    color: #007bff;
+}
+
+.footer-bottom p {
+    margin: 0;
+    color: #6c757d;
+}
+
+
+/* Estilos para el rectángulo negro con texto deslizante */
+.marquee-container {
+    background-color: black;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 100%;
+    position: relative;
+}
+
+.marquee {
+    display: inline-block;
+    padding-left: 100%;
+    animation: marquee 15s linear infinite;
+}
+
+.marquee span {
+    display: inline-block;
+    padding-right: 50px; /* Espacio entre frases */
+}
+
+@keyframes marquee {
+    0% { transform: translateX(0%); }
+    100% { transform: translateX(-100%); }
+}
+
+/* Estilos específicos para la vista Nuestra Historia */
+.nuestra-historia .highlight-text {
+    text-align: center; /* Centra el texto */
+    font-family: 'Arial Black', Arial, sans-serif; /* Fuente similar a la de la imagen */
+    font-size: 3rem; /* Tamaño grande */
+    color: #000; /* Color del texto */
+    letter-spacing: 0.1em; /* Espaciado entre letras */
+    font-weight: bold; /* Negrita */
+    text-transform: uppercase; /* Texto en mayúsculas */
+    margin-bottom: 40px;
+    transition: color 0.3s ease;
+}
+
+.nuestra-historia h2, .nuestra-historia p {
+    font-family: Arial, Helvetica, sans-serif; /* Fuente general para el resto del contenido */
+    color: #333; /* Ajusta el color del texto si es necesario */
+}
+
+.nuestra-historia p {
+    text-align: justify; /* Justificar los párrafos */
+}
+
+.nuestra-historia .container {
+    padding: 20px;
+}
+
+.nuestra-historia h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.nuestra-historia p {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* Estilos para el botón */
+.nuestra-historia .btn-dark {
+    background-color: #000;
+    border-color: #000;
+    color: #fff;
+}
+
+.nuestra-historia .btn-dark:hover {
+    background-color: #333;
+    border-color: #333;
+    color: #fff;
+}
+
+/* Estilos para la imagen de pantalla completa y el botón */
+.container-fluid {
+    position: relative;
+}
+
+.container-fluid .btn-container {
+    position: absolute;
+    bottom: 20px; /* Ajusta este valor para mover el botón hacia arriba o hacia abajo */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.container-fluid .btn-dark {
+    background-color: #000;
+    border-color: #000;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.container-fluid .btn-dark:hover {
+    background-color: #333;
+    color: #fff;
+}
